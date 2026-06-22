@@ -2,16 +2,16 @@ global ft_strcpy
 
 ft_strcpy:
 
+    mov rax, rdi
+
 .loop:
-    mov al, byte [rsi]
-    mov [rdi], al
-    cmp al, 0
+    mov cl, byte [rsi]
+    mov [rdi], cl
+    cmp cl, 0
     je .end
     inc rdi
     inc rsi
     jmp .loop
 
-
 .end:
-    mov rax, rdi
     ret
